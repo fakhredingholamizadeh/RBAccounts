@@ -2,7 +2,7 @@ version: "2"
 sql:
   - engine: "postgresql"
     queries: "./db/query/account.sql"
-    schema: "./db/migration/000002_add_users.up.sql"
+    schema: "./db/migration/add_user.up.sql"
     gen:
       go:
         package: "db"
