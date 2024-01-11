@@ -12,6 +12,22 @@ jobs:
   test:
     name: Test
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:14-alpine
+        env:
+          POSTGRES_USER: root
+          POSTGRES_PASSWORD: asd_123
+          POSTGRES_DB: RainBow
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
     - name: Set up Go
       uses: actions/setup-go@v4
