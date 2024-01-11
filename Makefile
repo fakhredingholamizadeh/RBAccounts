@@ -1,4 +1,5 @@
 
+# rainbow is Database name
 DB_URL=postgresql://root:asd_123@localhost:5432/rainbow?sslmode=disable
 
 postgres:

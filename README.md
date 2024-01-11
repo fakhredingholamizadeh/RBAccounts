@@ -1,2 +1,2 @@
-# RBUsers
+# Rainbow Users login Microservice
 This Microservice is for communication with the client version and user login.
