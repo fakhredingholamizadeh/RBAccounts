@@ -8,4 +8,3 @@ CREATE TABLE "account" (
   "created_at" timestamptz NOT NULL DEFAULT (now())
 );
 
-ALTER TABLE "account" ADD FOREIGN KEY ("username") REFERENCES "account" ("username");
