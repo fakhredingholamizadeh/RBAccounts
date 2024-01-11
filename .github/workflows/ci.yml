@@ -15,7 +15,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:14-alpine
+        image: postgres:postgresDB
         env:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: asd_123
@@ -29,10 +29,10 @@ jobs:
           --health-retries 5
 
     steps:
-    - name: Set up Go
-      uses: actions/setup-go@v4
+    - name: Set up Go 1.x
+      uses: actions/setup-go@v2
       with:
-        go-version: '1.21.5'
+        go-version: ^1.21
       id: go
 
     - name: Check out code into the Go module directory
