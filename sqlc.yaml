@@ -7,5 +7,7 @@ sql:
       go:
         package: "db"
         emit_json_tags: true
-        out: "db/sqlc"
+        out: "db/sqlc"    
+        emit_empty_slices: true
+
         

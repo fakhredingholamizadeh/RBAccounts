@@ -20,6 +20,11 @@ func New(db DBTX) *Queries {
 	return &Queries{db: db}
 }
 
+func NewStore(db *sql.DB) *Store {
+	return &Store{db: db, Queries: New(db) }
+}
+
+
 type Queries struct {
 	db DBTX
 }

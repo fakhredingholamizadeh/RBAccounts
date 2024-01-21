@@ -22,4 +22,24 @@ sqlc:    # make sqlc
 test:    # make test .
 	go test -v -cover ./...
 
-.PHONY: postgres createdb dropdb migrateup migratedown sqlc test
+proto: 
+#	rm -f pb/*.go
+	protoc --proto_path=proto --go_out=pb --go_opt=paths=source_relative \
+	--go-grpc_out=pb --go-grpc_opt=paths=source_relative \
+	proto/*.proto
+
+server:
+	go run main.go
+	
+.PHONY: postgres createdb dropdb migrateup migratedown sqlc test proto server
+
+
+# func New(db DBTX) *Queries {
+#	return &Queries{db: db}
+#}
+
+#func NewStore(db *sql.DB) *Store {
+#	return &Store{db: db, Queries: New(db) }
+#}
+
+

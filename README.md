@@ -36,7 +36,25 @@ sql:
       sql_package: pgx/v5
 ```
 
+# RESTful API
+```
+I have used the Gin web framework. 
+In the future, Middleware and authentication[JWT && PASETO] and Swagger will be added to these APIs. 
+There is also a plan to consider Metrics libraries.
 
+```
+````
+	POST accounts
+	GET  accounts/:id
+	GET  accounts
+````
+
+# Viper
+```
+Viper: Go Configuration with Fangs
+Viper
+Go configuration with fangs!
+```
 
 # Note!
 The `db/query/account.sql` file contains generated Go files from SQLC. It should not be edited manually.</
